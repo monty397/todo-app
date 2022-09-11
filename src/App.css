@@ -1,0 +1,81 @@
+.App {
+    text-align: center;
+    margin: 0 auto;
+    display: flex;
+}
+
+.container {
+    margin: 50px auto;
+    height: 200px;
+    width: 50%;
+}
+
+.container2 {
+    margin: 50px auto;
+    min-height: 200px;
+    width: 70%;
+    border-radius: 10px;
+    border: 1px solid;
+}
+
+@media screen and (max-width: 900px) {
+    .editbox {
+        flex-direction: row;
+    }
+    .delete {
+        flex-wrap: wrap;
+    }
+    .edit {
+        flex-wrap: wrap;
+    }
+}
+
+h1 {
+    margin-top: 50px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+}
+
+h4 {
+    margin-left: 520x;
+}
+
+input[type="text"] {
+    margin-top: 50px;
+    position: relative;
+}
+
+.todo {
+    font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+    text-align: left;
+    /* border: 1px solid; */
+    margin: 50px auto;
+    width: 40%;
+    /* min-height: 50%; */
+}
+
+.editbox {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.delete {
+    padding: 10px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.edit {
+    padding: 10px;
+    flex-wrap: wrap;
+}
+
+.submitEdit {
+    padding: 10px;
+}
+
+.check {
+    /* display: flex; */
+    flex-wrap: wrap;
+}
