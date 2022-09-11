@@ -50,28 +50,29 @@ function App() {
 
   return (
     <div className="App">
+      <div className="container2">
       <div className="container">
         <h1>Todo App</h1>
         <form onSubmit={handleSubmit}>
-          <input type="text" onChange={(e) => setTodo(e.target.value)} value={todo} required/>
+          <input type="text" onChange={(e) => setTodo(e.target.value)} value={todo} required />
           <button type="submit">Add</button>
         </form>
 
-        <div className="container2">
-        {todos.map((todo) => <div className="todo" key={todo.id}>
+        
+          {todos.map((todo) => <div className="todo" key={todo.id}>
 
-          {todoEditing === todo.id 
-          ? (<input className="editbox" type="text" onChange={(e) => setEditingText(e.target.value)} value={editingText} />)
-          : (<div>{todo.text}  <input className="check" type="checkbox" onChange={() => changeCheck(todo.id)} checked={todo.completed} /></div>)}
+            {todoEditing === todo.id
+              ? (<input className="editbox" type="text" onChange={(e) => setEditingText(e.target.value)} value={editingText} />)
+              : (<div>{todo.text}  <input className="check" type="checkbox" onChange={() => changeCheck(todo.id)} checked={todo.completed} /></div>)}
 
-          <div><button className="delete" onClick={() => deleteTodo(todo.id)}>Delete</button>
+            <div><button className="delete" onClick={() => deleteTodo(todo.id)}>Delete</button>
 
-            {todoEditing === todo.id 
-            ? (<button className="submitEdit" onClick={() => submitEdits(todo.id)}>Submit Edits</button>) 
-            : (<button className="edit" onClick={() => setTodoEditing(todo.id)}>Edit</button>)}
-          </div>
-        </div>)}
-      </div>
+              {todoEditing === todo.id
+                ? (<button className="submitEdit" onClick={() => submitEdits(todo.id)}>Submit Edits</button>)
+                : (<button className="edit" onClick={() => setTodoEditing(todo.id)}>Edit</button>)}
+            </div>
+          </div>)}
+        </div>
       </div>
     </div>
   );
