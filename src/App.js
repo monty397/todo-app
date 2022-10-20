@@ -7,6 +7,21 @@ function App() {
   const [todoEditing, setTodoEditing] = React.useState(null);
   const [editingText, setEditingText] = React.useState("");
 
+  React.useEffect(() => {
+    const temp = localStorage.getItem("todos")
+    const loadedTodos = JSON.parse(temp)
+
+    if (loadedTodos) {
+      setTodos(loadedTodos)
+    }
+  }, [])
+
+  React.useEffect(() => {
+    const temp = JSON.stringify(todos)
+    localStorage.setItem("todos", temp)
+  }, [todos])
+
+
   function handleSubmit(e) {
     e.preventDefault();
 
@@ -52,7 +67,7 @@ function App() {
     <div className="App">
       <div className="container2">
       <div className="container">
-        <h1>Todo App</h1>
+        <h1>To-do List</h1>
         <form onSubmit={handleSubmit}>
           <input type="text" onChange={(e) => setTodo(e.target.value)} value={todo} required />
           <button type="submit">Add</button>
