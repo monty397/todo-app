@@ -5,4 +5,4 @@ This App was created using React, HTML/CSS.
 ## Demo
 
 You can view the App here:
-https://akhil-todo-app.netlify.app
+https://akhil-to-do-app.netlify.app/
